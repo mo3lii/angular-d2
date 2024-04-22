@@ -1,0 +1,32 @@
+td {
+  border: 1px solid #e0e0e0;
+  padding: 6px;
+  width: 100%;
+}
+
+th {
+  background-color: #555;
+  color: white;
+  border: 1px solid #555;
+  padding: 6px;
+  width: 100%;
+}
+table input:hover {
+  color: white;
+  background-color: red;
+}
+table input {
+  color: red;
+  border: 1px solid red;
+  background-color: transparent;
+  font-weight: 500;
+}
+
+tr {
+  display: flex;
+  width: 100%;
+}
+
+.bg-gray {
+  background-color: #f0f0f0;
+}

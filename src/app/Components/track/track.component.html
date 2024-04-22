@@ -1,0 +1,19 @@
+<h3 class="text-center w-100 bg-info-subtle p-4">Choose Track</h3>
+<select name="track" [(ngModel)]="selectedTrack" class="form-select my-4">
+  @for (track of tracks; track $index) {
+  <option [ngValue]="track">
+    {{ track.name }}
+  </option>
+  }
+</select>
+@if (selectedTrack!=null) {
+<div class="rounded-2 shadow p-3 text-bg-warning">
+  <h4>Track Name : {{ selectedTrack?.name }}</h4>
+  <h5>Branches :</h5>
+  @for (branch of selectedTrack?.branches; track $index) {
+  <p>- {{ branch }}</p>
+  }@empty {
+  <p>No Branhces Available</p>
+  }
+</div>
+}

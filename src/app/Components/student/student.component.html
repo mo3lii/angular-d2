@@ -1,0 +1,40 @@
+<div class="form w-50">
+  <input
+    #name
+    placeholder="Enter Student Name"
+    class="form-control my-3"
+    type="text"
+  />
+  <input
+    #age
+    placeholder="Enter Student Age"
+    class="form-control my-3"
+    type="number"
+  />
+  <button (click)="addStudent(name, age)" class="btn btn-success">
+    Add Student
+  </button>
+  <div class="text-danger my-2">
+    @if (!isStudentValid) { Student is not valid }
+  </div>
+</div>
+
+<table class="table table-striped table-bordered text-center">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Action</th>
+  </tr>
+
+  @for (st of students; track $index) {
+  <tr [className]="$odd ? 'bg-light' : 'bg-gray'">
+    <td>{{ st.id }}</td>
+    <td>{{ st.name }}</td>
+    <td>{{ st.age }}</td>
+    <td>
+      <input class="btn" value="Delete" (click)="deleteStudent($index)" />
+    </td>
+  </tr>
+  }
+</table>
