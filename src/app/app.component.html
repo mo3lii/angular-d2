@@ -1,11 +1,57 @@
-<app-nav></app-nav>
-<app-slider></app-slider>
+<!-- <app-nav></app-nav> -->
 <div class="container my-5">
-  <h2 class="w-100 text-center p-3">Explore Our Products</h2>
-  <app-product></app-product>
-  <hr class="my-5" />
+  <div
+    class="w-100 d-flex justify-content-center align-items-center gap-4 bg-dark p-2 text-dark fw-bold my-3"
+  >
+    <span
+      class="page-tab"
+      [ngClass]="{ 'bg-gold': pageIndex == 0 }"
+      (click)="changePageIndex(0)"
+      >Home</span
+    >
+    <span
+      class="page-tab"
+      [ngClass]="{ 'bg-gold': pageIndex == 1 }"
+      (click)="changePageIndex(1)"
+      >Student</span
+    >
+    <span
+      class="page-tab"
+      [ngClass]="{ 'bg-gold': pageIndex == 2 }"
+      (click)="changePageIndex(2)"
+      >Products</span
+    >
+  </div>
+
+  @switch (pageIndex) { @case (0) {
+  <app-slider></app-slider>
+  <div class="p-4 bg-light card shadow my-5 text-center">
+    <h1>Welcome To Home Page</h1>
+    <p class="lh-lg fs-6">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
+      perspiciatis libero ullam veritatis labore sit architecto, ex inventore
+      error odio quam tenetur aliquid commodi veniam delectus perferendis
+      repellendus quos pariatur. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Modi perspiciatis libero ullam veritatis labore sit
+      architecto, ex inventore error odio quam tenetur aliquid commodi veniam
+      delectus perferendis repellendus quos pariatur. Lorem ipsum dolor, sit
+      amet consectetur adipisicing elit. Modi perspiciatis libero ullam
+      veritatis labore sit architecto, ex inventore error odio quam tenetur
+      aliquid commodi veniam delectus perferendis repellendus quos pariatur.
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
+      perspiciatis libero ullam veritatis labore sit architecto, ex inventore
+      error odio quam tenetur aliquid commodi veniam delectus perferendis
+      repellendus quos pariatur.
+    </p>
+  </div>
+  } @case (1) {
   <app-student></app-student>
   <hr class="my-5" />
   <app-track></app-track>
+  } @case (2) {
+  <h2 class="w-100 text-center p-3">Explore Our Products</h2>
+  <app-product></app-product>
+  <hr class="my-5" />
+  } }
 </div>
 <app-footer></app-footer>

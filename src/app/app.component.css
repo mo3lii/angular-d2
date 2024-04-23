@@ -1,0 +1,16 @@
+.page-tab {
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.page-tab:hover {
+  background-color: gold;
+}
+
+.bg-gold {
+  background-color: gold;
+}
+
+/* bg-light py-1 px-3 rounded-3 */

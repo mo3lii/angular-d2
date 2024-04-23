@@ -1,29 +1,5 @@
 <div class="row">
   @for (prod of products; track prod.id) {
-  <div class="col-3 mt-3">
-    <div class="card w-100">
-      <div class="card-body">
-        <div class="img-container">
-          <img [src]="prod.img" alt="" />
-        </div>
-        <h5 class="card-title">{{ prod.name }}</h5>
-        <p class="card-text">Price : {{ prod.price }}$</p>
-        <p class="card-text">Quantity : {{ prod.quantity }}</p>
-        <button
-          [disabled]="prod.quantity == 0 ? true : false"
-          href="#"
-          class="btn"
-          [ngClass]="{
-            'btn-outline-danger': prod.quantity == 0,
-            'btn-warning':prod.quantity==1,
-            'btn-success':prod.quantity>1,
-
-          }"
-        >
-          @if(prod.quantity==0){Out Of Stock} @else{Buy Now}
-        </button>
-      </div>
-    </div>
-  </div>
+  <app-product-item [prod]="prod" class="col-3 mt-4"></app-product-item>
   }
 </div>

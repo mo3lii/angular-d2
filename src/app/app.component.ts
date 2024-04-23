@@ -6,6 +6,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { ProductComponent } from './Components/product/product.component';
 import { StudentComponent } from './Components/student/student.component';
 import { TrackComponent } from './Components/track/track.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,15 @@ import { TrackComponent } from './Components/track/track.component';
     ProductComponent,
     StudentComponent,
     TrackComponent,
+    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'first-proj';
+  pageIndex: number = 0;
+  changePageIndex(index: number) {
+    this.pageIndex = index;
+  }
 }
